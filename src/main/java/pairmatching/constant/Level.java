@@ -7,11 +7,16 @@ public enum Level {
     FOUR(4, "레벨4"),
     FIVE(5, "레벨5")
     ;
+
     private final int level;
     private final String name;
 
     Level(int level, String name) {
         this.level = level;
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -19,4 +19,12 @@ public enum Mission {
         this.level = level;
         this.missions = missions;
     }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public List<String> getMissions() {
+        return missions;
+    }
 }
