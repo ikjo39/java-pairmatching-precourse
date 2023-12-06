@@ -1,10 +1,9 @@
 package pairmatching.controller;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.function.Supplier;
-import pairmatching.model.CourseInformation;
 import pairmatching.model.FunctionType;
+import pairmatching.model.MatchCondition;
+import pairmatching.model.MatchingResults;
 import pairmatching.view.InputView;
 import pairmatching.view.OutputView;
 
@@ -18,12 +17,21 @@ public class PairMatchingController {
     }
 
     public void run() {
-        List<String> matchingResult = Collections.emptyList();
+        MatchingResults matchingResults = new MatchingResults();
         while (true) {
             FunctionType functionType = getFunctionType();
-            if (functionType.isMatchingEnd()) break;
+            if (functionType.isMatchingEnd()) {
+                break;
+            }
             if (functionType.isPressPairMatching()) {
-                CourseInformation courseInformation = getCourseInformation();
+                MatchCondition matchCondition = getCourseInformation();
+
+            }
+            if (functionType.isPressPAIR_INQUIRY()) {
+
+            }
+            if (functionType.isPressPAIR_CLEAR()) {
+                matchingResults.clear();
             }
         }
     }
@@ -32,8 +40,8 @@ public class PairMatchingController {
         return retryUntilSuccess(() -> new FunctionType(inputView.readFunctionType()));
     }
 
-    private CourseInformation getCourseInformation() {
-        return retryUntilSuccess(() -> new CourseInformation(inputView.readCourseInformation()));
+    private MatchCondition getCourseInformation() {
+        return retryUntilSuccess(() -> MatchCondition.from(inputView.readCourseInformation()));
     }
 
     private <T> T retryUntilSuccess(Supplier<T> supplier) {

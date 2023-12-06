@@ -22,10 +22,12 @@ public class InputView {
     }
 
     public List<String> readCourseInformation() {
-        final CourseMapper courseMapper = new CourseMapper();
-        System.out.println(courseMapper.getCourseText());
+        final CourseMissionMapper courseMissionMapper = new CourseMissionMapper();
+        System.out.println(courseMissionMapper.getCourseText());
         System.out.println(ENTER_COURSE_INFORMATION);
         String input = Console.readLine();
+        List<String> information = Arrays.stream(input.split(SPLIT_DELIMITER))
+                .collect(Collectors.toList());
         return Arrays.stream(input.split(SPLIT_DELIMITER))
                 .collect(Collectors.toList());
     }

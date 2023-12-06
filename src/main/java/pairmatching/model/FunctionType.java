@@ -31,4 +31,12 @@ public class FunctionType {
     public boolean isPressPairMatching() {
         return PAIR_MATCHING.equals(type);
     }
+
+    public boolean isPressPAIR_INQUIRY() {
+        return PAIR_INQUIRY.equals(type);
+    }
+
+    public boolean isPressPAIR_CLEAR() {
+        return PAIR_CLEAR.equals(type);
+    }
 }
