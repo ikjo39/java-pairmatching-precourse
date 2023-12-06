@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public enum Mission {
-    LEVEL_ONE(Level.ONE, Arrays.asList("자동차 경주", "로또", "숫자야구게임")),
+    LEVEL_ONE(Level.ONE, Arrays.asList("자동차경주", "로또", "숫자야구게임")),
     LEVEL_TWO(Level.TWO, Arrays.asList("장바구니", "결제", "지하철노선도")),
     LEVEL_THREE(Level.THREE, Collections.emptyList()),
     LEVEL_FOUR(Level.FOUR, Arrays.asList("성능개선", "배포")),

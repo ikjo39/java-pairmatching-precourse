@@ -24,4 +24,11 @@ public class FunctionType {
         }
     }
 
+    public boolean isMatchingEnd() {
+        return EXIT_CODE.equals(type);
+    }
+
+    public boolean isPressPairMatching() {
+        return PAIR_MATCHING.equals(type);
+    }
 }
