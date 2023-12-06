@@ -1,5 +1,6 @@
 package pairmatching.controller;
 
+import pairmatching.model.FunctionType;
 import pairmatching.view.InputView;
 import pairmatching.view.OutputView;
 
@@ -13,6 +14,7 @@ public class PairMatchingController {
     }
 
     public void run() {
+        FunctionType functionType = new FunctionType(inputView.readFunctionType());
 
     }
 }
